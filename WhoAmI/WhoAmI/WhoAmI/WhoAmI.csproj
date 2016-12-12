@@ -31,7 +31,8 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="data\ISQLite.cs" />
+    <Compile Include="data\ISQLiteConnectionPovider.cs" />
+    <Compile Include="data\SQLite.cs" />
     <Compile Include="game\AIs\EasyAI.cs" />
     <Compile Include="game\AIs\IAI.cs" />
     <Compile Include="business\BooleanAnswer.cs" />

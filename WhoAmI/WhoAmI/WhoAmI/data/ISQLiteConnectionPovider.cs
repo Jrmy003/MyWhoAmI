@@ -2,7 +2,7 @@
 
 namespace WhoAmI.data
 {
-    public interface ISQLite
+    public interface ISQLiteConnectionPovider
     {
         SQLiteConnection GetConnection();
     }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using WhoAmI.data;
+using WhoAmI.helpers;
+using WhoAmI.UWP.data;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -63,6 +66,10 @@ namespace WhoAmI.UWP
 
                 // Placez le frame dans la fenêtre active
                 Window.Current.Content = rootFrame;
+
+                // TODO : Peut être à mettre ailleurs
+                RegisterDependencies();
+                CreateTables();
             }
 
             if (e.PrelaunchActivated == false)
@@ -101,6 +108,16 @@ namespace WhoAmI.UWP
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: enregistrez l'état de l'application et arrêtez toute activité en arrière-plan
             deferral.Complete();
+        }
+
+        private void RegisterDependencies()
+        {
+            ServiceContainer.Register<ISQLiteConnectionPovider>(() => new UWPSQLiteConnectionPovider());
+        }
+
+        private void CreateTables()
+        {
+            WhoAmI.data.SQLite.Instance.CreerTables();
         }
     }
 }
