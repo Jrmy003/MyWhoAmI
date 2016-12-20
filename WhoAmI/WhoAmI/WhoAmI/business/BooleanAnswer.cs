@@ -5,7 +5,22 @@ namespace WhoAmI.business
     [Table("Answer")]
     class BooleanAnswer : IAnswer
     {
+        private long _id;
         private bool _value;
+
+        [PrimaryKey, AutoIncrement]
+        public long Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
 
         [Column("BoolValue")]
         public bool Value

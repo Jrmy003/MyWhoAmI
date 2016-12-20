@@ -45,6 +45,9 @@
     <Compile Include="game\Player.cs" />
     <Compile Include="helpers\ServiceContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="services\CharacterService.cs" />
+    <Compile Include="services\interfaces\ICharacterService.cs" />
+    <Compile Include="helpers\CommonRegistering.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -55,5 +58,6 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

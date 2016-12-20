@@ -27,6 +27,10 @@ namespace WhoAmI.data
             var sqliteConnectionProvider = ServiceContainer.Resolve<ISQLiteConnectionPovider>();
             var connection = sqliteConnectionProvider.GetConnection();
             connection.CreateTable<Character>();
+            connection.CreateTable<Criterion>();
+            connection.CreateTable<CriterionType>();
+            connection.CreateTable<StringAnswer>();
+            connection.CreateTable<BooleanAnswer>();
         }
 
     }

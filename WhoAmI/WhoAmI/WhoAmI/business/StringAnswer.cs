@@ -6,7 +6,23 @@ namespace WhoAmI.business
     [Table("Answer")]
     class StringAnswer : IAnswer
     {
+        private long _id;
+
         private string _value;
+
+        [PrimaryKey, AutoIncrement]
+        public long Id
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
 
         [Column("StringValue")]
         public string Value

@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using WhoAmI.data;
 using WhoAmI.helpers;
 using WhoAmI.UWP.data;
+using WhoAmI.UWP.views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace WhoAmI.UWP
@@ -43,10 +34,10 @@ namespace WhoAmI.UWP
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
+            //if (System.Diagnostics.Debugger.IsAttached)
+            //{
+            //    this.DebugSettings.EnableFrameRateCounter = true;
+            //}
 #endif
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -79,7 +70,7 @@ namespace WhoAmI.UWP
                     // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
                     // puis configurez la nouvelle page en transmettant les informations requises en tant que
                     // paramètre
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(NewCharacterView), e.Arguments);
                 }
                 // Vérifiez que la fenêtre actuelle est active
                 Window.Current.Activate();
@@ -112,6 +103,7 @@ namespace WhoAmI.UWP
 
         private void RegisterDependencies()
         {
+            CommonRegistering.RegisterCommonDependencies();
             ServiceContainer.Register<ISQLiteConnectionPovider>(() => new UWPSQLiteConnectionPovider());
         }
 
