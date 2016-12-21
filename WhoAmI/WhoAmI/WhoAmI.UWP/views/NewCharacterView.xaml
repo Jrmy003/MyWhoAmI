@@ -6,9 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    DataContext="{Binding Path=CharacterViewModel, Source={StaticResource ViewModelLocator}}">
+    DataContext="{Binding Path=NewCharacterViewModel, Source={StaticResource ViewModelLocator}}" Background="Black">
 
-    <StackPanel Background="Black">
+    <StackPanel>
         <TextBlock Text="Firstname" Foreground="WhiteSmoke" FontSize="26"/>
         <TextBox Text="{Binding Firstname, Mode=TwoWay}" Name="tbFirstname" Foreground="WhiteSmoke" FontSize="26"/>
         <TextBlock Text="Lastname" Foreground="WhiteSmoke" FontSize="26"/>

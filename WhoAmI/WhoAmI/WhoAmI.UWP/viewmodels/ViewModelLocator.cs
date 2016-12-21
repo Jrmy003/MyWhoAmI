@@ -11,9 +11,14 @@ namespace WhoAmI.UWP.viewmodels
 
             SimpleIoc.Default.Register<NewCharacterViewModel>();
         }
-        public NewCharacterViewModel CharacterViewModel
+        public NewCharacterViewModel NewCharacterViewModel
         {
             get { return ServiceLocator.Current.GetInstance<NewCharacterViewModel>(); }
+        }
+
+        public CharactersViewModel CharactersViewModel
+        {
+            get { return ServiceLocator.Current.GetInstance<CharactersViewModel>(); }
         }
     }
 }

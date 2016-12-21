@@ -24,5 +24,10 @@ namespace WhoAmI.services
             db.Insert(new Character { Firstname = firstname, Lastname = lastname });
             return true;
         }
+
+        public List<Character> GetCharacters()
+        {
+            return db.Table<Character>().ToList();
+        }
     }
 }

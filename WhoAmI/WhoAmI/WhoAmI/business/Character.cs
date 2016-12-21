@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace WhoAmI.business
 {
     [Table("Character")]
-    class Character
+    public class Character
     {
         private long _id;
         private string _firstname;
