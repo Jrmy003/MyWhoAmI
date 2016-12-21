@@ -10,12 +10,12 @@
 
     <StackPanel Background="Black">
         <TextBlock Text="Firstname" Foreground="WhiteSmoke" FontSize="26"/>
-        <TextBox Text="{Binding Firstname}" Name="tbFirstname" Foreground="WhiteSmoke" FontSize="26"/>
+        <TextBox Text="{Binding Firstname, Mode=TwoWay}" Name="tbFirstname" Foreground="WhiteSmoke" FontSize="26"/>
         <TextBlock Text="Lastname" Foreground="WhiteSmoke" FontSize="26"/>
-        <TextBox Text="{Binding Lastname}" Name="tbLastname" Foreground="WhiteSmoke" FontSize="26"/>
+        <TextBox Text="{Binding Lastname, Mode=TwoWay}" Name="tbLastname" Foreground="WhiteSmoke" FontSize="26"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Command="{Binding SaveCharacterCommand}" Style="{StaticResource WhiteSmokeButton}">Save Character</Button>
-            <Button Style="{StaticResource WhiteSmokeButton}">Reset</Button>
+            <Button Command="{Binding ResetCharacterCommand}" Style="{StaticResource WhiteSmokeButton}">Reset</Button>
         </StackPanel>
     </StackPanel>
 </Page>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WhoAmI.services
 {
-    interface ICharacterService
+    public interface ICharacterService
     {
         bool SaveCharacter(string firstname, string lastname);
     }

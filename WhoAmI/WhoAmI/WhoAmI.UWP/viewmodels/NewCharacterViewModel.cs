@@ -7,6 +7,8 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
 using System.Diagnostics;
+using WhoAmI.services;
+using WhoAmI.helpers;
 
 namespace WhoAmI.UWP.viewmodels
 {
@@ -47,14 +49,31 @@ namespace WhoAmI.UWP.viewmodels
             private set;
         }
 
+        public ICommand ResetCharacterCommand
+        {
+            get;
+            private set;
+        }
+
         public NewCharacterViewModel()
         {
+            Firstname = string.Empty;
+            Lastname = string.Empty;
             SaveCharacterCommand = new RelayCommand(SaveCharacter);
+            ResetCharacterCommand = new RelayCommand(Reset);
         }
 
         private void SaveCharacter()
         {
-            Debug.WriteLine(string.Format("Character {0} {1} saved",_firstname, _lastname));
+            var service = ServiceContainer.Resolve<ICharacterService>();
+            service.SaveCharacter(_firstname, _lastname);
+            Reset();
+        }
+
+        private void Reset()
+        {
+            Firstname = string.Empty;
+            Lastname = string.Empty;
         }
     }
 }
