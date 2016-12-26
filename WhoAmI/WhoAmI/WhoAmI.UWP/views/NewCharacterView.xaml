@@ -6,16 +6,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    DataContext="{Binding Path=NewCharacterViewModel, Source={StaticResource ViewModelLocator}}" Background="Black">
+    DataContext="{Binding Path=NewCharacterViewModel, Source={StaticResource ViewModelLocator}}"
+    Style="{StaticResource AppStyle}">
 
-    <StackPanel>
+    <StackPanel Style="{StaticResource StackPanelStyle}">
         <TextBlock Text="Firstname" Foreground="WhiteSmoke" FontSize="26"/>
         <TextBox Text="{Binding Firstname, Mode=TwoWay}" Name="tbFirstname" Foreground="WhiteSmoke" FontSize="26"/>
         <TextBlock Text="Lastname" Foreground="WhiteSmoke" FontSize="26"/>
         <TextBox Text="{Binding Lastname, Mode=TwoWay}" Name="tbLastname" Foreground="WhiteSmoke" FontSize="26"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button Command="{Binding SaveCharacterCommand}" Style="{StaticResource WhiteSmokeButton}">Save Character</Button>
-            <Button Command="{Binding ResetCharacterCommand}" Style="{StaticResource WhiteSmokeButton}">Reset</Button>
+            <Button Command="{Binding SaveCharacterCommand}" Style="{StaticResource GoldenButton}">Save Character</Button>
+            <Button Command="{Binding ResetCharacterCommand}" Style="{StaticResource GoldenButton}">Reset</Button>
         </StackPanel>
     </StackPanel>
 </Page>

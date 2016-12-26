@@ -15,12 +15,18 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-        
-        <Style x:Key="WhiteSmokeButton" TargetType="Button">
+
+        <Style x:Key="StackPanelStyle" TargetType="StackPanel">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="GoldenButton" TargetType="Button">
             <Setter Property="Margin" Value="2"/>
             <Setter Property="MinWidth" Value="120"/>
             <Setter Property="FontSize" Value="26px"/>
-            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
             <Setter Property="Background" Value="Goldenrod"/>
         </Style>
     </Application.Resources>
