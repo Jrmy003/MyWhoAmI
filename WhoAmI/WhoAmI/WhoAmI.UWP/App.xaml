@@ -9,20 +9,19 @@
         <vm:ViewModelLocator
         x:Key="ViewModelLocator"/>
         <!-- Styles -->
+        <Style x:Key="AppStyle" TargetType="Page">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
         <Style x:Key="WhiteSmokeButton" TargetType="Button">
             <Setter Property="Margin" Value="2"/>
             <Setter Property="MinWidth" Value="120"/>
             <Setter Property="FontSize" Value="26px"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Background" >
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
-                        <GradientStop Color="Gray" Offset="0.2"/>
-                        <GradientStop Color="WhiteSmoke" Offset="0.85"/>
-                        <GradientStop Color="Gray" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Background" Value="Goldenrod"/>
         </Style>
     </Application.Resources>
 

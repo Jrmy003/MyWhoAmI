@@ -10,6 +10,7 @@ namespace WhoAmI.UWP.viewmodels
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<NewCharacterViewModel>();
+            SimpleIoc.Default.Register<CharactersViewModel>();
         }
         public NewCharacterViewModel NewCharacterViewModel
         {

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WhoAmI.business;
+using WhoAmI.helpers;
+using WhoAmI.services;
 
 namespace WhoAmI.UWP.viewmodels
 {
@@ -23,6 +25,12 @@ namespace WhoAmI.UWP.viewmodels
             {
                 Set(() => Characters, ref _characters, value);
             }
+        }
+
+        public CharactersViewModel()
+        {
+            var service = ServiceContainer.Resolve<ICharacterService>();
+            Characters = service.GetCharacters();
         }
     }
 }
