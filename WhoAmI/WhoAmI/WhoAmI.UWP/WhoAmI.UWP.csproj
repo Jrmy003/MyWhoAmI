@@ -104,8 +104,8 @@
     <Compile Include="views\CharactersView.xaml.cs">
       <DependentUpon>CharactersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="views\NewCharacterView.xaml.cs">
       <DependentUpon>NewCharacterView.xaml</DependentUpon>
@@ -161,7 +161,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="views\MainPage.xaml">
+    <Page Include="views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

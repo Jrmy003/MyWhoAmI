@@ -9,17 +9,19 @@
         <vm:ViewModelLocator
         x:Key="ViewModelLocator"/>
         <!-- Styles -->
-        <Style x:Key="AppStyle" TargetType="Page">
+        <Style x:Key="ScrollViewerStyle" TargetType="ScrollViewer">
             <Setter Property="Background" Value="Black"/>
-            <Setter Property="Foreground" Value="WhiteSmoke"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollMode" Value="Auto"/>
+            
         </Style>
 
         <Style x:Key="StackPanelStyle" TargetType="StackPanel">
-            <Setter Property="Background" Value="Black"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
         </Style>
 
         <Style x:Key="GoldenButton" TargetType="Button">

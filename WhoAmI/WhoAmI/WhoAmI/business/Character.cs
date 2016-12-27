@@ -1,5 +1,6 @@
 ﻿using SQLite.Net.Attributes;
 using System.Collections.Generic;
+using System.Text;
 
 namespace WhoAmI.business
 {
@@ -52,6 +53,12 @@ namespace WhoAmI.business
             {
                 _lastname = value;
             }
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            return sb.Append(_firstname).Append(" ").Append(_lastname).ToString();
         }
     }
 }
