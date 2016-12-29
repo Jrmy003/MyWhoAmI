@@ -8,7 +8,16 @@
     mc:Ignorable="d"
     DataContext="{Binding CharactersViewModel, Source={StaticResource ViewModelLocator}}">
 
-    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
-        <ListBox ItemsSource="{Binding Characters}" Background="Black" Foreground="WhiteSmoke"/>
-    </ScrollViewer>
+    <SplitView x:Name="charactersSplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+            <StackPanel Background="Gray">
+                <Button x:Name="btnTooglePane" FontFamily="Segoe MDL2 Assets" Click="btnTooglePane_Click" Content="&#59136;" Background="Transparent"/>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+                <ListBox ItemsSource="{Binding Characters}" Background="Black" Foreground="WhiteSmoke"/>
+            </ScrollViewer>
+        </SplitView.Content>
+    </SplitView>
 </Page>

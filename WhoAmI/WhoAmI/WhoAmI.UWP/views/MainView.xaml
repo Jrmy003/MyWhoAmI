@@ -7,10 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     DataContext="{Binding MainPageViewModel,Source={StaticResource ViewModelLocator}}">
-    <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
-        <StackPanel Style="{StaticResource StackPanelStyle}">
-            <Button Style="{StaticResource GoldenButton}" HorizontalAlignment="Center" Command="{Binding NewCharacterCommand}">Nouveau Personnage</Button>
-            <Button Style="{StaticResource GoldenButton}" HorizontalAlignment="Center" Command="{Binding CharactersCommand}">Personnages</Button>
-        </StackPanel>
-    </ScrollViewer>
+
+    <SplitView x:Name="charactersSplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+            <StackPanel Background="Gray">
+                <Button x:Name="btnTooglePane" FontFamily="Segoe MDL2 Assets" Click="btnTooglePane_Click" Content="&#59136;" Background="Transparent"/>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+                <StackPanel Style="{StaticResource StackPanelStyle}">
+                    <Button Style="{StaticResource GoldenButton}" HorizontalAlignment="Center" Command="{Binding NewCharacterCommand}">Nouveau Personnage</Button>
+                    <Button Style="{StaticResource GoldenButton}" HorizontalAlignment="Center" Command="{Binding CharactersCommand}">Personnages</Button>
+                </StackPanel>
+            </ScrollViewer>
+        </SplitView.Content>
+    </SplitView>
 </Page>

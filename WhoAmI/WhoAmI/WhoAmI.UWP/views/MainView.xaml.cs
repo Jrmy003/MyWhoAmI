@@ -26,5 +26,10 @@ namespace WhoAmI.UWP.views
         {
             this.InitializeComponent();
         }
+
+        private void btnTooglePane_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
