@@ -16,7 +16,7 @@
         </SplitView.Pane>
         <SplitView.Content>
             <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
-                <StackPanel Style="{StaticResource StackPanelStyle}">
+                <StackPanel Style="{StaticResource CenterStackPanelStyle}">
                     <Button Style="{StaticResource GoldenButton}" HorizontalAlignment="Center" Command="{Binding NewCharacterCommand}">Nouveau Personnage</Button>
                     <Button Style="{StaticResource GoldenButton}" HorizontalAlignment="Center" Command="{Binding CharactersCommand}">Personnages</Button>
                 </StackPanel>

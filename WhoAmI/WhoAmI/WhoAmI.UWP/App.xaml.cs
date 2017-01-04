@@ -5,9 +5,13 @@ using WhoAmI.UWP.data;
 using WhoAmI.UWP.views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Practices.ServiceLocation;
+using GalaSoft.MvvmLight.Views;
 
 namespace WhoAmI.UWP
 {
@@ -60,6 +64,7 @@ namespace WhoAmI.UWP
 
                 // TODO : Peut être à mettre ailleurs
                 RegisterDependencies();
+                RegisterBackButtonEvent();
                 CreateTables();
             }
 
@@ -110,6 +115,22 @@ namespace WhoAmI.UWP
         private void CreateTables()
         {
             WhoAmI.data.SQLite.Instance.CreerTables();
+        }
+
+        private void RegisterBackButtonEvent()
+        {
+            SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+        }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            var frame = Window.Current.Content as Frame;
+            if (frame.CanGoBack)
+            {
+                var navigationService = ServiceLocator.Current.GetInstance<INavigationService>();
+                navigationService.GoBack();
+                e.Handled = true;
+            }
         }
     }
 }
